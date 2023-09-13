@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <link rel="stylesheet" href="home.css" />
 <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
@@ -17,10 +18,14 @@
 <body>
     <div class="content rounded pb-3 px-3">
         <header class="row">
-            <div class="col-md-6 ">
+            <div data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine" class="col-md-6 ">
                 <img src="image/logo1.png"  alt="foto-profil" class=" img-fluid">
             </div>
-            <div class="col-md-6 d-flex flex-column  justify-content-center">
+            <div data-aos="fade-left"
+          
+            data-aos-duration="500" class="col-md-6 d-flex flex-column  justify-content-center">
                 <h3>Hi, Saya Fahruroji </h3>
                 <h3>Saya adalah WEB Developer</h3>
                 <p>Saya merupakan lulusan Politeknik Piksi Input Serang dengan mengambil jurusan Management Informatika, dalam bidang ini saya yakin bisa memberikan kontribusi kepada perusahaan yang membutuhkan System Informasi.</p>
@@ -47,9 +52,9 @@
 
         <section class="mb-3">
             <h2 class="text-center pb-3">Projek</h2>
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-3">
-                    <a href="https://github.com/ojipoetra/sistem-pelayanan-desa-parage" class=" card text-decoration-none text-dark">
+            <div class="row g-4 d-flex justify-content-center">
+                <div data-aos="flip-left" data-aos-delay="50" class="col-md-3">
+                    <a href="https://github.com/ojipoetra/sistem-pelayanan-desa-parage/tree/master" class=" card text-decoration-none text-dark">
                         <img src="image/pelayanan.jpg" class="card-img-top" alt="..." style="height: 150px;">
                         <div class="card-body">
                           <h5 class="card-title">Program aplikasi pel...</h5>
@@ -58,7 +63,7 @@
                         </div>
                       </a>
                 </div>
-                <div class="col-md-3">
+                <div data-aos="flip-right" data-aos-delay="50" class="col-md-3">
                     <a href="https://github.com/ojipoetra/unjuk_keterampilan" class="card text-decoration-none text-dark">
                         <img src="image/berita.jpg" class="card-img-top" alt="..." style="height: 150px;">
                         <div class="card-body">
@@ -73,16 +78,18 @@
             
         </section>
 
-        <section>
+        <section class="">
             <h2 class="text-center">Kontak</h2>
-            <form id="whatsapp-form">
-                <label for="nama">Nama:</label>
-                <input type="text" id="nama" name="nama" required><br><br>
-        
-                <label for="pesan">Pesan:</label>
-                <textarea id="pesan" name="pesan" required></textarea><br><br>
-        
-                <button type="submit" onclick="kirim()"> Kirim</button>
+            <form id="whatsapp-form" class="row d-flex flex-column align-items-center justify-content-center">
+                <div class="col-md-8 mb-3">
+                    <label for="nama" class="form-label">Nama</label>
+                    <input type="text" class="form-control" id="nama" placeholder="contohnama">
+                  </div>
+                  <div class="col-md-8 mb-3">
+                    <input id="x" type="hidden" name="content">
+                    <trix-editor input="x"></trix-editor>
+                    <button type="submit" onclick="kirim()" class="btn btn-primary mt-3"><i class="bi bi-send"></i> Kirim</button>
+                  </div>
             </form>
         </section>
     </div>
@@ -90,6 +97,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+          </script>
     <script src="">
         function kirim() {
             let nomor = "+6288223931865"
