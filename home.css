@@ -1,0 +1,48 @@
+:root {
+  --bg-color: #081b29;
+  --second-bg-color: #112e42;
+  --text-color: #ededed;
+  --main-color: #00abf0;
+  --hover-color: #0ef;
+}
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  width: 100%;
+} */
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  padding: 30px;
+}
+
+header .download {
+  text-decoration: none;
+  padding: 0 8px 0 8px;
+  border-radius: 10px;
+  color: var(--text-color);
+  font-weight: 500;
+  background-color: var(--main-color);
+}
+
+header .download:hover {
+  box-shadow: 0 0 1rem var(--main-color);
+  transition: 0.2s;
+}
+
+.content {
+  background-color: var(--second-bg-color);
+}
+
+.title {
+  color: var(--text-color);
+}
+/* header .foto-profil {
+  width: 250px;
+  height: 250px;
+} */
